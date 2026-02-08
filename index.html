@@ -162,6 +162,17 @@ flex-wrap:wrap;
 .orderBtns .btn{
 margin-top:0;
 }
+.modalOrderBtns{
+display:flex;
+gap:14px;
+justify-content:center;
+margin-top:24px;
+flex-wrap:wrap;
+}
+
+.modalOrderBtns .btn{
+margin-top:0;
+}
 
 </style>
 </head>
@@ -181,8 +192,7 @@ style="width:170px;margin-top:16px;margin-bottom:2px">
 
 <p class="sub">TOEFL • Sertifikat Komputer • Bimbingan Mahasiswa</p>
 <p class="sub">Handled by Aca • Since 2023</p>
-
-<div class="orderBtns">
+<div class="modalOrderBtns">
 
 <a class="btn" target="_blank"
 href="https://wa.me/6282177253514?text=Halo%20Aca,%20aku%20sudah%20transfer%20DP%20TOEFL%0A%0AFORMAT%0ANama:%0ATempat%20%26%20tanggal%20lahir:%0ANomor%20WhatsApp:%0AAlamat:%0ASkor:">
@@ -195,6 +205,7 @@ Konsultasi Gratis
 </a>
 
 </div>
+
 
 
 <div class="section">
@@ -338,9 +349,11 @@ setInterval(next,3500)
       <h3 id="modalTitle"></h3>
       <button onclick="closeModal()">Tutup</button>
     </div>
+
     <div id="modalContent"></div>
 
-    <div class="modal-actions">
+    <!-- fallback tombol untuk layanan non-order -->
+    <div id="defaultModalAction" class="modal-actions">
       <a class="btn" target="_blank"
       href="https://wa.me/6282177253514?text=Halo%20Aca,%20saya%20ingin%20konsultasi">
       Konsultasi Gratis
@@ -348,8 +361,10 @@ setInterval(next,3500)
     </div>
   </div>
 </div>
+
 <script>
 const serviceData={
+
 toefl:{
 title:"Sertifikat TOEFL",
 content:`
@@ -399,8 +414,7 @@ content:`
 </ul>
 <p>Biaya: 350k/Semester</p>
 `
-}
-  ,
+},
 
 orderToefl:{
 title:"Order Sertifikat TOEFL",
@@ -425,10 +439,19 @@ a/n Natasya Salsabilla</p>
 
 <p>Setelah DP, aku bantu proses administrasinya, kalau sudah selesai nanti aku kirimkan buktinya kak.</p>
 
+<div class="modalOrderBtns">
+
 <a class="btn" target="_blank"
 href="https://wa.me/6282177253514?text=Halo%20Aca,%20aku%20sudah%20transfer%20DP%20TOEFL%0A%0AFORMAT%0ANama:%0ATempat%20%26%20tanggal%20lahir:%0ANomor%20WhatsApp:%0AAlamat:%0ASkor:">
 Kirim Bukti Transfer
 </a>
+
+<a class="btn" target="_blank"
+href="https://wa.me/6282177253514?text=Halo%20Aca,%20saya%20ingin%20konsultasi">
+Konsultasi Gratis
+</a>
+
+</div>
 `
 },
 
@@ -455,10 +478,19 @@ a/n Natasya Salsabilla</p>
 
 <p>Setelah DP, aku bantu proses ya kak dan akan aku kirim update setelah selesai.</p>
 
+<div class="modalOrderBtns">
+
 <a class="btn" target="_blank"
 href="https://wa.me/6282177253514?text=Halo%20Aca,%20aku%20sudah%20transfer%20DP%20Sertifikat%20Komputer.%0A%0AFORMAT%0ANama:%0ATempat%20%26%20tanggal%20lahir:%0ANomor%20HP:%0AAlamat:%0APendidikan%20terakhir:%0AKeperluan:">
 Kirim Bukti Transfer
 </a>
+
+<a class="btn" target="_blank"
+href="https://wa.me/6282177253514?text=Halo%20Aca,%20saya%20ingin%20konsultasi">
+Konsultasi Gratis
+</a>
+
+</div>
 `
 }
 
@@ -467,20 +499,27 @@ Kirim Bukti Transfer
 function openModal(type){
 document.getElementById("modalTitle").innerText=serviceData[type].title
 document.getElementById("modalContent").innerHTML=serviceData[type].content
+
+// hide default button jika order
+document.getElementById("defaultModalAction").style.display =
+(type==="orderToefl" || type==="orderKomputer") ? "none" : "block"
+
 document.getElementById("modal").style.display="flex"
 }
 
 function closeModal(){
 document.getElementById("modal").style.display="none"
 }
-  document.getElementById("modal").addEventListener("click",e=>{
+
+document.getElementById("modal").addEventListener("click",e=>{
 if(e.target.id==="modal") closeModal()
 })
-
 </script>
+
 
 </body>
 </html>
+
 
 
 
