@@ -13,14 +13,30 @@
 
 <style>
 body{
+body{
 margin:0;
 font-family:system-ui;
 color:white;
-background:
-radial-gradient(circle at top, rgba(161,194,253,.15), transparent 40%),
-radial-gradient(circle at bottom, rgba(255,255,255,.05), transparent 40%),
-linear-gradient(180deg,#192F52,#0f1f3a);
+
+/* base */
+background-color:#0f1f3a;
+
+/* ambient layers */
+background-image:
+radial-gradient(800px 400px at 10% -10%, rgba(161,194,253,.22), transparent 60%),
+radial-gradient(600px 300px at 90% 10%, rgba(161,194,253,.18), transparent 60%),
+radial-gradient(700px 400px at 50% 110%, rgba(255,255,255,.06), transparent 60%),
+linear-gradient(180deg,#192F52 0%, #0f1f3a 100%);
 }
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+pointer-events:none;
+z-index:0;
+}
+
 .container{
 position:relative;
 z-index:1;
@@ -779,6 +795,7 @@ el.parentElement.classList.toggle("active")
 
 </body>
 </html>
+
 
 
 
