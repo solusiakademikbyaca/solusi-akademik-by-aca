@@ -215,6 +215,23 @@ font-weight:600;
 display:none;
 z-index:2000;
 }
+.badge{
+display:inline-block;
+background:#A1C2FD;
+color:#192F52;
+font-size:12px;
+padding:4px 10px;
+border-radius:12px;
+margin-bottom:6px;
+font-weight:600;
+}
+.btn{
+transition:.2s ease;
+}
+
+.btn:hover{
+transform:scale(1.04);
+}
 
 </style>
 </head>
@@ -287,19 +304,27 @@ Klik untuk lihat detail
   
 </div>
 <div class="section">
-<h2>Order Sekarang</h2>
+<h2 id="order">Order Sekarang</h2>
 
-<div class="grid">
 
 <div class="card service-card" onclick="openModal('orderToefl')">
+
+<p style="font-size:13px;opacity:.7;margin:0 0 6px">
+Order via Website
+</p>
+
 <b>Order Sertifikat TOEFL</b><br><br>
 Order lebih cepat via Website
 <p style="margin-top:10px;opacity:.7;font-size:14px">
 Klik untuk mulai order
 </p>
 </div>
-
 <div class="card service-card" onclick="openModal('orderKomputer')">
+
+<p style="font-size:13px;opacity:.7;margin:0 0 6px">
+Order via Website
+</p>
+
 <b>Order Sertifikat Komputer</b><br><br>
 Order lebih cepat via Website
 <p style="margin-top:10px;opacity:.7;font-size:14px">
@@ -307,7 +332,7 @@ Klik untuk mulai order
 </p>
 </div>
 
-</div>
+  
 </div>
 
 
@@ -549,6 +574,11 @@ Konsultasi Gratis
 }
 
 function openModal(type){
+
+if(type==="orderToefl" || type==="orderKomputer"){
+document.getElementById("order").scrollIntoView({behavior:"smooth"})
+}
+
 document.getElementById("modalTitle").innerText=serviceData[type].title
 document.getElementById("modalContent").innerHTML=serviceData[type].content
 
@@ -558,6 +588,7 @@ document.getElementById("defaultModalAction").style.display =
 
 document.getElementById("modal").style.display="flex"
 }
+
 
 function closeModal(){
 document.getElementById("modal").style.display="none"
@@ -584,6 +615,7 @@ toast.style.display="none"
 
 </body>
 </html>
+
 
 
 
