@@ -12,6 +12,14 @@ font-family:system-ui;
 background:#002D5F;
 color:white;
 }
+  
+.card{
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
 
 .container{
 max-width:1000px;
@@ -92,12 +100,33 @@ border-radius:12px;
 </div>
 
 <div class="section" id="kontak">
-<h2>Kontak</h2>
-<div class="card">
-WhatsApp: 082177253514<br>
+<h2>Konsultasi</h2>
+
+<div class="card" style="text-align:center">
+
+<p>Siap bantu kebutuhan akademik kamu.</p>
+
+<a class="btn" target="_blank"
+href="https://wa.me/6282177253514?text=Halo%20Aca,%20saya%20ingin%20konsultasi%20layanan">
+Chat WhatsApp Sekarang
+</a>
+
+<p style="margin-top:15px;opacity:.7">
 Instagram: @solusiakademik.byaca
+</p>
+
 </div>
 </div>
+
+<div class="section hero">
+<h2>Mulai dari sekarang</h2>
+<p>Jangan tunda target akademikmu.</p>
+<a class="btn" target="_blank"
+href="https://wa.me/6282177253514?text=Halo%20Aca,%20saya%20siap%20mulai">
+Mulai Konsultasi
+</a>
+</div>
+
 
 </div>
 
@@ -126,3 +155,4 @@ gallery.innerHTML+=`<img src="${i}">`
 
 </body>
 </html>
+
