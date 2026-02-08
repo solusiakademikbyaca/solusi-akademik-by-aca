@@ -4,37 +4,102 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Solusi Akademik By Aca</title>
+
 <style>
-body{margin:0;font-family:system-ui;background:#002D5F;color:white}
-section{padding:40px 20px;max-width:900px;margin:auto}
-h1,h2{margin:0 0 12px}
-.card{background:rgba(255,255,255,.08);padding:20px;border-radius:14px;margin:12px 0}
-img{max-width:100%;border-radius:10px}
-button{padding:10px 18px;border-radius:30px;border:none;background:#A1C0F8}
+body{
+margin:0;
+font-family:system-ui;
+background:#002D5F;
+color:white;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+}
+
+.hero{
+text-align:center;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+opacity:.8;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 26px;
+background:#A1C0F8;
+border-radius:30px;
+color:#002D5F;
+text-decoration:none;
+font-weight:600;
+}
+
+.section{
+margin-top:60px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+padding:20px;
+border-radius:16px;
+}
+
+img{
+width:100%;
+border-radius:12px;
+}
 </style>
 </head>
 
 <body>
 
-<section>
+<div class="container">
+
+<div class="hero">
 <h1 id="headline"></h1>
 <p id="subhead"></p>
-</section>
+<a class="btn" href="#kontak">Konsultasi Gratis</a>
+</div>
 
-<section>
+<div class="section">
 <h2>Tentang Kami</h2>
 <div class="card" id="about"></div>
-</section>
+</div>
 
-<section>
+<div class="section">
 <h2>Layanan</h2>
-<div id="services"></div>
-</section>
+<div class="grid" id="services"></div>
+</div>
 
-<section>
+<div class="section">
 <h2>Testimoni</h2>
-<div id="gallery"></div>
-</section>
+<div class="grid" id="gallery"></div>
+</div>
+
+<div class="section" id="kontak">
+<h2>Kontak</h2>
+<div class="card">
+WhatsApp: 082177253514<br>
+Instagram: @solusiakademik.byaca
+</div>
+</div>
+
+</div>
 
 <script>
 fetch("data.json")
@@ -48,7 +113,7 @@ about.innerText=d.about.text
 d.services.forEach(s=>{
 services.innerHTML+=`
 <div class="card">
-<b>${s.title}</b><br>${s.desc}
+<b>${s.title}</b><br><br>${s.desc}
 </div>`
 })
 
