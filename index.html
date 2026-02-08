@@ -366,16 +366,27 @@ z-index:1;
 }
 .formInput{
 width:100%;
-padding:10px 14px;
-border-radius:12px;
+padding:14px 16px;
+border-radius:14px;
 border:none;
-margin-bottom:10px;
-background:rgba(255,255,255,.08);
+margin-bottom:14px;
+background:rgba(255,255,255,.06);
 color:white;
+font-size:14px;
+outline:none;
+transition:.2s ease;
+}
+
+.formInput:focus{
+background:rgba(255,255,255,.12);
 }
 
 .formInput::placeholder{
-color:rgba(255,255,255,.5);
+color:rgba(255,255,255,.45);
+}
+.modalOrderBtns,
+form button{
+margin-top:12px;
 }
 
 </style>
@@ -830,6 +841,7 @@ window.open("https://wa.me/6282177253514?text="+encodeURIComponent(msg))
 
 </body>
 </html>
+
 
 
 
