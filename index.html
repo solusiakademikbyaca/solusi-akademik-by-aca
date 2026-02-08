@@ -255,6 +255,43 @@ animation:pulse 2s infinite;
 100%{transform:scale(1)}
 }
 
+.faq-item{
+background:rgba(255,255,255,.06);
+border-radius:14px;
+margin-bottom:12px;
+overflow:hidden;
+}
+
+.faq-q{
+padding:14px 18px;
+cursor:pointer;
+font-weight:600;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.faq-a{
+padding:0 18px;
+max-height:0;
+overflow:hidden;
+transition:.3s ease;
+opacity:0;
+}
+
+.faq-item.active .faq-a{
+max-height:200px;
+padding:14px 18px;
+opacity:1;
+}
+
+.faq-arrow{
+transition:.3s ease;
+}
+
+.faq-item.active .faq-arrow{
+transform:rotate(180deg);
+}
 
 </style>
 </head>
@@ -354,10 +391,42 @@ Order lebih cepat via Website
 Klik untuk mulai order
 </p>
 </div>
-
-  
 </div>
 
+<div class="section">
+<h2>FAQ</h2>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+Aman nggak kak?
+<span class="faq-arrow">⌄</span>
+</div>
+<div class="faq-a">
+Iya kak, proses dilakukan bertahap dan ditangani langsung oleh Aca. Setelah DP masuk, administrasi langsung diproses.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+Berapa lama prosesnya?
+<span class="faq-arrow">⌄</span>
+</div>
+<div class="faq-a">
+Untuk sertifikat TOEFL nasional biasanya 1 hari. Sertifikat komputer juga diproses di hari yang sama.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+Setelah transfer aku ngapain?
+<span class="faq-arrow">⌄</span>
+</div>
+<div class="faq-a">
+Klik tombol “Kirim Bukti Transfer”, isi format data, lalu aku bantu proses sampai selesai ya kak.
+</div>
+</div>
+
+</div>
 
 <div class="section">
 <h2>Testimoni</h2>
@@ -642,12 +711,15 @@ href="https://wa.me/6282177253514?text=Halo%20Aca,%20aku%20mau%20konsultasi">
 </svg>
 
 </a>
-
-
-
+<script>
+function toggleFaq(el){
+el.parentElement.classList.toggle("active")
+}
+</script>
 
 </body>
 </html>
+
 
 
 
