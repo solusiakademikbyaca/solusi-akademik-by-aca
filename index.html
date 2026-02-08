@@ -16,17 +16,10 @@ body{
 margin:0;
 font-family:system-ui;
 color:white;
-
-/* base */
-background-color:#0f1f3a;
-
-/* ambient layers */
-background-image:
-radial-gradient(800px 400px at 10% -10%, rgba(161,194,253,.22), transparent 60%),
-radial-gradient(600px 300px at 90% 10%, rgba(161,194,253,.18), transparent 60%),
-radial-gradient(700px 400px at 50% 110%, rgba(255,255,255,.06), transparent 60%),
-linear-gradient(180deg,#192F52 0%, #0f1f3a 100%);
+background:#0f1f3a;
+overflow-x:hidden;
 }
+
 body::before{
 content:"";
 position:fixed;
@@ -342,11 +335,41 @@ text-align:center;
 .card{
 box-shadow:0 8px 24px rgba(0,0,0,.18);
 }
+.ambient{
+position:fixed;
+inset:-50%;
+background:
+radial-gradient(600px 400px at 20% 20%, rgba(161,194,253,.18), transparent 60%),
+radial-gradient(500px 350px at 80% 30%, rgba(161,194,253,.15), transparent 60%),
+radial-gradient(700px 500px at 50% 80%, rgba(255,255,255,.06), transparent 60%);
+filter:blur(80px);
+animation:ambientMove 18s ease-in-out infinite alternate;
+z-index:0;
+pointer-events:none;
+}
+
+@keyframes ambientMove{
+0%{
+transform:translate(-5%,-5%) scale(1);
+}
+50%{
+transform:translate(5%,5%) scale(1.05);
+}
+100%{
+transform:translate(-3%,4%) scale(1.02);
+}
+}
+
+.container{
+position:relative;
+z-index:1;
+}
 
 </style>
 </head>
 
 <body>
+<div class="ambient"></div>
 
 <div class="container">
 
@@ -794,6 +817,7 @@ el.parentElement.classList.toggle("active")
 
 </body>
 </html>
+
 
 
 
