@@ -1,0 +1,23 @@
+{
+"settings":{
+"headline":"Solusi Akademik By Aca",
+"subhead":"Pendampingan akademik, TOEFL, sertifikat komputer, dan bantuan mahasiswa"
+},
+
+"about":{
+"text":"Solusi Akademik by Aca adalah layanan pendampingan akademik profesional yang membantu klien menyelesaikan urusan akademik secara aman dan bertanggung jawab."
+},
+
+"services":[
+{"title":"TOEFL","desc":"Sertifikat TOEFL nasional & internasional"},
+{"title":"Komputer","desc":"Sertifikat komputer resmi"},
+{"title":"Bantuan UT","desc":"Pendampingan mahasiswa UT"},
+{"title":"Lainnya","desc":"Translate, tugas, dll"}
+],
+
+"testimonials":[
+"assets/testimonials/img-01.png",
+"assets/testimonials/img-02.png",
+"assets/testimonials/img-03.png"
+]
+}
