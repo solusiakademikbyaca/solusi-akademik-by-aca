@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta property="og:title" content="Solusi Akademik by Aca">
+<meta property="og:description" content="Pendampingan & solusi akademik • TOEFL • Sertifikat Komputer • Bimbingan Mahasiswa">
+<meta property="og:image" content="https://solusiakademikbyaca.github.io/solusi-akademik-by-aca/assets/logo.png">
+<meta property="og:url" content="https://solusiakademikbyaca.github.io/solusi-akademik-by-aca/">
+<meta name="description" content="Solusi Akademik by Aca menyediakan layanan TOEFL, sertifikat komputer, dan bimbingan mahasiswa UT. Konsultasi gratis, proses aman, ditangani langsung oleh Aca.">
+  
 <title>Solusi Akademik by Aca</title>
 
 <style>
@@ -141,6 +146,12 @@ user-select:none;
   
 img{width:100%;border-radius:14px}
 footer{text-align:center;opacity:.6;margin-top:80px}
+  
+  @media(max-width:600px){
+.hero h1{font-size:32px}
+.section{margin-top:40px}
+}
+
 </style>
 </head>
 
@@ -228,7 +239,7 @@ Geser testimoni klien kami
 <p>Siap bantu kebutuhan akademik kamu.</p>
 
 <a class="btn" target="_blank"
-href="https://wa.me/6282177253514?text=Halo%20Aca,%20saya%20ingin%20mulai%20konsultasi">
+href="https://wa.me/6282177253514?text=Hai%20Aca,%20aku%20pengen%20konsultasi%20layanan">
 Chat WhatsApp Sekarang
 </a>
 
@@ -357,10 +368,15 @@ document.getElementById("modal").style.display="flex"
 function closeModal(){
 document.getElementById("modal").style.display="none"
 }
+  document.getElementById("modal").addEventListener("click",e=>{
+if(e.target.id==="modal") closeModal()
+})
+
 </script>
 
 </body>
 </html>
+
 
 
 
