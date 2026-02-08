@@ -218,7 +218,7 @@ Klik untuk lihat detail
 
 <div class="grid">
 
-<div class="card service-card" onclick="openModal('toefl')">
+<div class="card service-card" onclick="openModal('orderToefl')">
 <b>Order Sertifikat TOEFL</b><br><br>
 DP 150k • Proses cepat • Kirim bukti via WhatsApp
 <p style="margin-top:10px;opacity:.7;font-size:14px">
@@ -226,7 +226,7 @@ Klik untuk mulai order
 </p>
 </div>
 
-<div class="card service-card" onclick="openModal('komputer')">
+<div class="card service-card" onclick="openModal('orderKomputer')">
 <b>Order Sertifikat Komputer</b><br><br>
 DP 150k • Sertifikat siap pakai
 <p style="margin-top:10px;opacity:.7;font-size:14px">
@@ -380,6 +380,69 @@ content:`
 <p>Biaya: 350k/Semester</p>
 `
 }
+  ,
+
+orderToefl:{
+title:"Order Sertifikat TOEFL",
+content:`
+<p><b>DP Test:</b> 150k</p>
+
+<p><b>Rekening SeaBank</b><br>
+901674944620<br>
+a/n Natasya Salsabilla</p>
+
+<hr style="opacity:.2">
+
+<b>/formattoefl</b>
+
+<ul>
+<li>Nama lengkap</li>
+<li>Tempat & tanggal lahir</li>
+<li>Nomor WhatsApp</li>
+<li>Alamat</li>
+<li>Skor</li>
+</ul>
+
+<p>Setelah DP, aku bantu proses administrasinya, kalau sudah selesai nanti aku kirimkan buktinya kak.</p>
+
+<a class="btn" target="_blank"
+href="https://wa.me/6282177253514?text=Halo%20Aca,%20saya%20sudah%20transfer%20DP%20TOEFL.%0A%0A/formattoefl%0ANama:%0ATempat%20%26%20tanggal%20lahir:%0ANomor%20WhatsApp:%0AAlamat:%0ASkor:">
+Saya sudah transfer – kirim bukti
+</a>
+`
+},
+
+orderKomputer:{
+title:"Order Sertifikat Komputer",
+content:`
+<p><b>DP Test:</b> 150k</p>
+
+<p><b>Rekening SeaBank</b><br>
+901674944620<br>
+a/n Natasya Salsabilla</p>
+
+<hr style="opacity:.2">
+
+<b>/formatkomputer</b>
+
+<ul>
+<li>Nama</li>
+<li>Tempat & tanggal lahir</li>
+<li>Nomor HP</li>
+<li>Alamat</li>
+<li>Pendidikan terakhir</li>
+<li>Keperluan</li>
+</ul>
+
+<p>Setelah DP, aku bantu proses ya kak dan akan aku kirim update setelah selesai.</p>
+
+<a class="btn" target="_blank"
+href="https://wa.me/6282177253514?text=Halo%20Aca,%20saya%20sudah%20transfer%20DP%20Sertifikat%20Komputer.%0A%0A/formatkomputer%0ANama:%0ATempat%20%26%20tanggal%20lahir:%0ANomor%20HP:%0AAlamat:%0APendidikan%20terakhir:%0AKeperluan:">
+Saya sudah transfer – kirim bukti
+</a>
+`
+}
+
 }
 
 function openModal(type){
@@ -399,6 +462,7 @@ if(e.target.id==="modal") closeModal()
 
 </body>
 </html>
+
 
 
 
