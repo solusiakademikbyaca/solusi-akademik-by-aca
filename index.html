@@ -62,6 +62,7 @@ margin:auto;
 .sliderWrap img{
 width:100%;
 border-radius:16px;
+transition:.4s ease;
 }
 
 .sliderBtn{
@@ -177,29 +178,41 @@ Instagram: @solusiakademik.byaca
 
 </div>
 <script>
-let i=1
-const max=40
-const img=document.getElementById("sliderImg")
+const total = 40
+let index = 1
+const slider = document.getElementById("sliderImg")
+const images = []
+
+for(let i=1;i<=total;i++){
+const img = new Image()
+img.src = `assets/testimonials/img-${String(i).padStart(2,"0")}.png`
+images.push(img.src)
+}
 
 function show(){
-img.src=`assets/testimonials/img-${String(i).padStart(2,"0")}.png`
+slider.style.opacity=0
+setTimeout(()=>{
+slider.src = images[index-1]
+slider.style.opacity=1
+},200)
 }
 
 function next(){
-i++
-if(i>max)i=1
+index++
+if(index>total) index=1
 show()
 }
 
 function prev(){
-i--
-if(i<1)i=max
+index--
+if(index<1) index=total
 show()
 }
 
-setInterval(next,4000)
+setInterval(next,3500)
 </script>
 
 </body>
 </html>
+
 
