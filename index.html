@@ -364,6 +364,19 @@ transform:translate(-3%,4%) scale(1.02);
 position:relative;
 z-index:1;
 }
+.formInput{
+width:100%;
+padding:10px 14px;
+border-radius:12px;
+border:none;
+margin-bottom:10px;
+background:rgba(255,255,255,.08);
+color:white;
+}
+
+.formInput::placeholder{
+color:rgba(255,255,255,.5);
+}
 
 </style>
 </head>
@@ -676,9 +689,8 @@ content:`
 orderToefl:{
 title:"Order Sertifikat TOEFL",
 content:`
-<p>
-DP Test: 150k dan Pelunasan: 180k 
-</p>
+
+<p><b>DP Test: 150k dan Pelunasan: 180k</b></p>
 
 <p>
 <b>Rekening SeaBank:</b>
@@ -688,40 +700,26 @@ DP Test: 150k dan Pelunasan: 180k
 
 <hr style="opacity:.2">
 
-<b>Kirimkan Format</b>
+<form onsubmit="submitToefl(event)">
 
-<ul>
-<li>Nama lengkap</li>
-<li>Tempat & tanggal lahir</li>
-<li>Nomor WhatsApp</li>
-<li>Alamat</li>
-<li>Skor</li>
-</ul>
+<input required placeholder="Nama lengkap" id="t_nama" class="formInput">
+<input required placeholder="Tempat & tanggal lahir" id="t_ttl" class="formInput">
+<input required placeholder="Nomor WhatsApp" id="t_wa" class="formInput">
+<input required placeholder="Alamat" id="t_alamat" class="formInput">
+<input required placeholder="Skor" id="t_skor" class="formInput">
 
-<p>Setelah DP, aku bantu proses administrasinya, kalau sudah selesai nanti aku kirimkan buktinya kak.</p>
+<button class="btn" style="width:100%">Kirim Order TOEFL</button>
 
-<div class="modalOrderBtns">
-
-<a class="btn" target="_blank"
-href="https://wa.me/6282177253514?text=Halo%20Aca,%20aku%20sudah%20transfer%20DP%20TOEFL%0A%0AFORMAT%0ANama:%0ATempat%20%26%20tanggal%20lahir:%0ANomor%20WhatsApp:%0AAlamat:%0ASkor:">
-Kirim Bukti Transfer
-</a>
-
-<a class="btn" target="_blank"
-href="https://wa.me/6282177253514?text=Halo%20Aca,%20saya%20ingin%20konsultasi">
-Konsultasi Gratis
-</a>
-
-</div>
+</form>
 `
 },
+
 
 orderKomputer:{
 title:"Order Sertifikat Komputer",
 content:`
-<p>
-DP Test: 150k dan Pelunasan: 180k 
-</p>
+
+<p><b>DP Test: 150k dan Pelunasan: 180k</b></p>
 
 <p>
 <b>Rekening SeaBank:</b>
@@ -731,33 +729,18 @@ DP Test: 150k dan Pelunasan: 180k
 
 <hr style="opacity:.2">
 
-<b>Kirimkan Format</b>
+<form onsubmit="submitKomputer(event)">
 
+<input required placeholder="Nama" id="k_nama" class="formInput">
+<input required placeholder="Tempat & tanggal lahir" id="k_ttl" class="formInput">
+<input required placeholder="Nomor HP" id="k_hp" class="formInput">
+<input required placeholder="Alamat" id="k_alamat" class="formInput">
+<input required placeholder="Pendidikan terakhir" id="k_pend" class="formInput">
+<input required placeholder="Keperluan" id="k_need" class="formInput">
 
-<ul>
-<li>Nama</li>
-<li>Tempat & tanggal lahir</li>
-<li>Nomor HP</li>
-<li>Alamat</li>
-<li>Pendidikan terakhir</li>
-<li>Keperluan</li>
-</ul>
+<button class="btn" style="width:100%">Kirim Order Komputer</button>
 
-<p>Setelah DP, aku bantu proses ya kak dan akan aku kirim update setelah selesai.</p>
-
-<div class="modalOrderBtns">
-
-<a class="btn" target="_blank"
-href="https://wa.me/6282177253514?text=Halo%20Aca,%20aku%20sudah%20transfer%20DP%20Sertifikat%20Komputer.%0A%0AFORMAT%0ANama:%0ATempat%20%26%20tanggal%20lahir:%0ANomor%20HP:%0AAlamat:%0APendidikan%20terakhir:%0AKeperluan:">
-Kirim Bukti Transfer
-</a>
-
-<a class="btn" target="_blank"
-href="https://wa.me/6282177253514?text=Halo%20Aca,%20saya%20ingin%20konsultasi">
-Konsultasi Gratis
-</a>
-
-</div>
+</form>
 `
 }
 
@@ -814,9 +797,40 @@ function toggleFaq(el){
 el.parentElement.classList.toggle("active")
 }
 </script>
+<script>
+function submitToefl(e){
+e.preventDefault()
+
+const msg=`Halo Aca, aku mau order TOEFL
+
+Nama: ${t_nama.value}
+TTL: ${t_ttl.value}
+WA: ${t_wa.value}
+Alamat: ${t_alamat.value}
+Skor: ${t_skor.value}`
+
+window.open("https://wa.me/6282177253514?text="+encodeURIComponent(msg))
+}
+
+function submitKomputer(e){
+e.preventDefault()
+
+const msg=`Halo Aca, aku mau order Sertifikat Komputer
+
+Nama: ${k_nama.value}
+TTL: ${k_ttl.value}
+HP: ${k_hp.value}
+Alamat: ${k_alamat.value}
+Pendidikan: ${k_pend.value}
+Keperluan: ${k_need.value}`
+
+window.open("https://wa.me/6282177253514?text="+encodeURIComponent(msg))
+}
+</script>
 
 </body>
 </html>
+
 
 
 
