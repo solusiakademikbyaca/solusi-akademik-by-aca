@@ -50,6 +50,53 @@ grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:20px;
 }
 
+  .service-card{cursor:pointer}
+
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.modal-box{
+background:#0f1f3a;
+color:white;
+width:90%;
+max-width:620px;
+border-radius:18px;
+padding:24px;
+animation:fadeIn .3s ease;
+}
+
+.modal-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:12px;
+}
+
+.modal-header button{
+background:none;
+border:none;
+color:#A1C2FD;
+font-weight:600;
+cursor:pointer;
+}
+
+.modal-actions{
+margin-top:20px;
+text-align:center;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:scale(.95)}
+to{opacity:1;transform:scale(1)}
+}
+
 .card{
 background:rgba(255,255,255,.08);
 padding:20px;
@@ -130,19 +177,29 @@ Solusi Akademik by Aca adalah layanan pendampingan akademik profesional yang mem
 <h2>Layanan</h2>
 <div class="grid">
 
-<div class="card">
+<div class="card service-card" onclick="openModal('toefl')">
 <b>Sertifikat TOEFL</b><br><br>
 Untuk CPNS, BUMN, OJK, KAI, kerja, dan administrasi kampus.
+<p style="margin-top:10px;opacity:.7;font-size:14px">
+Klik untuk lihat detail
+</p>
 </div>
 
-<div class="card">
+
+<div class="card service-card" onclick="openModal('komputer')">...</div>
 <b>Sertifikat Komputer</b><br><br>
-Sertifikat resmi untuk keperluan kerja dan administrasi.
+Untuk CPNS, BUMN, OJK, KAI, kerja, dan administrasi kampus.
+<p style="margin-top:10px;opacity:.7;font-size:14px">
+Klik untuk lihat detail
+</p>
 </div>
 
-<div class="card">
-<b>Bimbingan Mahasiswa UT</b><br><br>
-Pendampingan TUTON, TUWEB, rangkuman BMP, dan strategi lulus tepat waktu.
+<div class="card service-card" onclick="openModal('ut')">...</div>
+<b>Sertifikat TOEFL</b><br><br>
+Untuk CPNS, BUMN, OJK, KAI, kerja, dan administrasi kampus.
+<p style="margin-top:10px;opacity:.7;font-size:14px">
+Klik untuk lihat detail
+</p>
 </div>
 
 </div>
@@ -221,6 +278,82 @@ show()
 }
 
 setInterval(next,3500)
+</script>
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="modalTitle"></h3>
+      <button onclick="closeModal()">Tutup</button>
+    </div>
+    <div id="modalContent"></div>
+
+    <div class="modal-actions">
+      <a class="btn" target="_blank"
+      href="https://wa.me/6282177253514?text=Halo%20Aca,%20saya%20ingin%20konsultasi">
+      Konsultasi Gratis
+      </a>
+    </div>
+  </div>
+</div>
+<script>
+const serviceData={
+toefl:{
+title:"Sertifikat TOEFL",
+content:`
+<p>Butuh sertifikat TOEFL tanpa proses ribet tapi tetap aman?</p>
+
+<b>Sertifikat Nasional</b>
+<ul>
+<li>Keperluan: CPNS, BUMN, OJK, KAI, dll</li>
+<li>Proses: Bertahap & aman</li>
+<li>Biaya: 330k (DP + pelunasan)</li>
+<li>Durasi: 1–24 jam</li>
+</ul>
+
+<b>Sertifikat Internasional</b>
+<ul>
+<li>Keperluan: LPDP, S2, TBI</li>
+<li>Proses: ETS Resmi</li>
+<li>Biaya mulai 500k</li>
+</ul>
+`
+},
+
+komputer:{
+title:"Sertifikat Komputer",
+content:`
+<ul>
+<li>Microsoft Word</li>
+<li>Microsoft Excel</li>
+<li>Microsoft PowerPoint</li>
+<li>Administrasi kantor</li>
+</ul>
+<p>Cocok untuk keperluan kerja & administrasi.</p>
+`
+},
+
+ut:{
+title:"Bimbingan Mahasiswa UT",
+content:`
+<ul>
+<li>Pendampingan TUTON</li>
+<li>Rangkuman BMP</li>
+<li>Strategi lulus tepat waktu</li>
+</ul>
+<p>Dikelola langsung oleh Aca.</p>
+`
+}
+}
+
+function openModal(type){
+document.getElementById("modalTitle").innerText=serviceData[type].title
+document.getElementById("modalContent").innerHTML=serviceData[type].content
+document.getElementById("modal").style.display="flex"
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none"
+}
 </script>
 
 </body>
