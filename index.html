@@ -192,6 +192,29 @@ margin:8px 0;
 display:block;
 margin-top:10px;
 }
+.copyRek{
+cursor:pointer;
+color:#A1C2FD;
+font-weight:600;
+}
+
+.copyRek:hover{
+text-decoration:underline;
+}
+
+.copyToast{
+position:fixed;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+background:#A1C2FD;
+color:#192F52;
+padding:10px 18px;
+border-radius:20px;
+font-weight:600;
+display:none;
+z-index:2000;
+}
 
 </style>
 </head>
@@ -440,8 +463,12 @@ title:"Order Sertifikat TOEFL",
 content:`
 <p><b>DP Test:</b> 150k <b>Pelunasan:</b> 180k</p>
 
-<p><b>Rekening SeaBank: 901674944620</b><br>
-a/n Natasya Salsabilla</p>
+<p>
+<b>Rekening SeaBank:</b>
+<span class="copyRek" onclick="copyRek()">901674944620</span><br>
+a/n Natasya Salsabilla
+</p>
+
 
 <hr style="opacity:.2">
 
@@ -477,8 +504,11 @@ orderKomputer:{
 title:"Order Sertifikat Komputer",
 content:`
 <p><b>DP Test:</b> 150k <b>Pelunasan:</b> 180k</p>
-<p><b>Rekening SeaBank: 901674944620</b><br>
-a/n Natasya Salsabilla</p>
+<p>
+<b>Rekening SeaBank:</b>
+<span class="copyRek" onclick="copyRek()">901674944620</span><br>
+a/n Natasya Salsabilla
+</p>
 
 <hr style="opacity:.2">
 
@@ -532,9 +562,23 @@ document.getElementById("modal").addEventListener("click",e=>{
 if(e.target.id==="modal") closeModal()
 })
 </script>
+<div id="copyToast" class="copyToast">Nomor rekening berhasil disalin</div>
+<script>
+function copyRek(){
+navigator.clipboard.writeText("901674944620")
+
+const toast=document.getElementById("copyToast")
+toast.style.display="block"
+
+setTimeout(()=>{
+toast.style.display="none"
+},2000)
+}
+</script>
 
 
 </body>
 </html>
+
 
 
