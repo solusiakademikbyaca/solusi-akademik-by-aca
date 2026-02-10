@@ -432,6 +432,38 @@ flex-shrink:0;
 .profile .service-card{
 cursor:pointer;
 }
+.serviceProfile{
+display:flex;
+gap:24px;
+align-items:center;
+cursor:pointer;
+}
+
+.serviceProfile img{
+width:110px;
+height:110px;
+object-fit:contain;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+padding:10px;
+}
+
+.serviceText{
+flex:1;
+}
+
+.serviceText b{
+font-size:18px;
+display:block;
+margin-bottom:6px;
+}
+
+@media(max-width:600px){
+.serviceProfile{
+flex-direction:column;
+text-align:center;
+}
+}
 
 </style>
 </head>
@@ -477,19 +509,48 @@ Solusi Akademik by Aca adalah layanan pendampingan akademik profesional yang mem
  <div class="section">
 <h2>Layanan</h2>
 
-<div class="card profile">
+<div class="card serviceProfile" onclick="openModal('toefl')">
+<img src="assets/logo-toefl.png">
 
-<img src="assets/logo-toefl.png" alt="Logo TOEFL">
-
-<div class="service-card" onclick="openModal('toefl')">
-<b>Sertifikat TOEFL</b><br><br>
+<div class="serviceText">
+<b>Sertifikat TOEFL</b>
 Untuk CPNS, BUMN, OJK, KAI, kerja, dan administrasi kampus.
-<p style="margin-top:10px;opacity:.7;font-size:14px">
+<p style="margin-top:8px;opacity:.7;font-size:14px">
 Klik untuk lihat detail
 </p>
 </div>
+</div>
+
+<br>
+
+<div class="card serviceProfile" onclick="openModal('komputer')">
+<img src="assets/logo-komputer.png">
+
+<div class="serviceText">
+<b>Sertifikat Komputer</b>
+Untuk CPNS, BUMN, OJK, KAI, kerja, dan administrasi kampus.
+<p style="margin-top:8px;opacity:.7;font-size:14px">
+Klik untuk lihat detail
+</p>
+</div>
+</div>
+
+<br>
+
+<div class="card serviceProfile" onclick="openModal('ut')">
+<img src="assets/logo-pokjar.png">
+
+<div class="serviceText">
+<b>Pokjar Aca</b>
+Bimbingan Mahasiswa UT, Pendampingan TUTON, rangkuman BMP, dan strategi lulus tepat waktu.
+<p style="margin-top:8px;opacity:.7;font-size:14px">
+Klik untuk lihat detail
+</p>
+</div>
+</div>
 
 </div>
+
 
 <br>
 
@@ -882,6 +943,7 @@ window.open("https://wa.me/6282177253514?text="+encodeURIComponent(msg))
 
 </body>
 </html>
+
 
 
 
