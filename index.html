@@ -403,6 +403,16 @@ color:white;
 font-size:14px;
 outline:none;
 }
+.service-logo{
+width:72px;
+height:72px;
+border-radius:50%;
+object-fit:contain;
+background:#fff;
+padding:10px;
+margin-bottom:12px;
+box-shadow:0 6px 18px rgba(0,0,0,.25);
+}
 
 </style>
 </head>
@@ -445,53 +455,54 @@ Solusi Akademik by Aca adalah layanan pendampingan akademik profesional yang mem
 </div>
 </div>
 
-  
-
-<div class="section">
+  <div class="section">
 <h2>Layanan</h2>
 
-<div class="card profile">
-<img src="assets/logo-toefl.png">
+<div class="card service-card" onclick="openModal('toefl')">
 
-<div class="service-card" onclick="openModal('toefl')">
+<img src="assets/logo-toefl.png" class="service-logo">
+
 <b>Sertifikat TOEFL</b><br><br>
 Untuk CPNS, BUMN, OJK, KAI, kerja, dan administrasi kampus.
+
 <p style="margin-top:10px;opacity:.7;font-size:14px">
 Klik untuk lihat detail
 </p>
-</div>
+
 </div>
 
 <br>
 
-<div class="card profile">
-<img src="assets/logo-komputer.png">
+<div class="card service-card" onclick="openModal('komputer')">
 
-<div class="service-card" onclick="openModal('komputer')">
+<img src="assets/logo-komputer.png" class="service-logo">
+
 <b>Sertifikat Komputer</b><br><br>
 Untuk CPNS, BUMN, OJK, KAI, kerja, dan administrasi kampus.
+
 <p style="margin-top:10px;opacity:.7;font-size:14px">
 Klik untuk lihat detail
 </p>
-</div>
+
 </div>
 
 <br>
 
-<div class="card profile">
-<img src="assets/logo-pokjar.png">
+<div class="card service-card" onclick="openModal('ut')">
 
-<div class="service-card" onclick="openModal('ut')">
+<img src="assets/logo-pokjar.png" class="service-logo">
+
 <b>Pokjar Aca</b><br><br>
 Bimbingan Mahasiswa UT, Pendampingan TUTON, rangkuman BMP, dan strategi lulus tepat waktu.
+
 <p style="margin-top:10px;opacity:.7;font-size:14px">
 Klik untuk lihat detail
 </p>
-</div>
+
 </div>
 
-  
 </div>
+
 <div class="section">
 <h2 id="order">Order Sekarang</h2>
 
@@ -848,6 +859,7 @@ window.open("https://wa.me/6282177253514?text="+encodeURIComponent(msg))
 
 </body>
 </html>
+
 
 
 
