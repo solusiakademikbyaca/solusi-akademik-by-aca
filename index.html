@@ -464,6 +464,49 @@ flex-direction:column;
 text-align:center;
 }
 }
+.layananGrid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:24px;
+margin-top:20px;
+}
+
+.serviceProfile{
+display:flex;
+gap:18px;
+align-items:center;
+min-height:140px;
+padding:24px;
+}
+
+.serviceProfile img{
+width:90px;
+height:90px;
+border-radius:50%;
+object-fit:contain;
+background:rgba(255,255,255,.08);
+padding:12px;
+flex-shrink:0;
+}
+
+.serviceText b{
+font-size:18px;
+margin-bottom:6px;
+display:block;
+}
+
+.lihatDetail{
+margin-top:10px;
+opacity:.6;
+font-size:14px;
+}
+
+@media(max-width:768px){
+.serviceProfile{
+flex-direction:column;
+text-align:center;
+}
+}
 
 </style>
 </head>
@@ -509,47 +552,38 @@ Solusi Akademik by Aca adalah layanan pendampingan akademik profesional yang mem
 <div class="section">
 <h2>Layanan</h2>
 
+<div class="grid layananGrid">
+
 <div class="card serviceProfile" onclick="openModal('toefl')">
 <img src="assets/logo-toefl.png">
-
 <div class="serviceText">
 <b>Sertifikat TOEFL</b>
 Untuk CPNS, BUMN, OJK, KAI, kerja, dan administrasi kampus.
-<p style="margin-top:8px;opacity:.7;font-size:14px">
-Klik untuk lihat detail
-</p>
+<p class="lihatDetail">Klik untuk lihat detail</p>
 </div>
 </div>
-
-<br>
 
 <div class="card serviceProfile" onclick="openModal('komputer')">
 <img src="assets/logo-komputer.png">
-
 <div class="serviceText">
 <b>Sertifikat Komputer</b>
 Untuk CPNS, BUMN, OJK, KAI, kerja, dan administrasi kampus.
-<p style="margin-top:8px;opacity:.7;font-size:14px">
-Klik untuk lihat detail
-</p>
+<p class="lihatDetail">Klik untuk lihat detail</p>
 </div>
 </div>
-
-<br>
 
 <div class="card serviceProfile" onclick="openModal('ut')">
 <img src="assets/logo-pokjar.png">
-
 <div class="serviceText">
 <b>Pokjar Aca</b>
 Bimbingan Mahasiswa UT, Pendampingan TUTON, rangkuman BMP, dan strategi lulus tepat waktu.
-<p style="margin-top:8px;opacity:.7;font-size:14px">
-Klik untuk lihat detail
-</p>
+<p class="lihatDetail">Klik untuk lihat detail</p>
 </div>
 </div>
 
 </div>
+</div>
+
 
 
 
@@ -909,6 +943,7 @@ window.open("https://wa.me/6282177253514?text="+encodeURIComponent(msg))
 
 </body>
 </html>
+
 
 
 
